@@ -23,8 +23,9 @@
   + 跳转到授权域名`gitauth.abc.test.com`，访问Github OAuth链接
     + 验证成功，获取code，下一步
     + 验证失败，拒绝服务，流程结束  
-  + 根据code访问cookie申请链接
-    + 服务端根据code获取Github账户名信息，再加上当前时间戳和盐值，生成哈希值作为cookie返回(域为`.test.com`、`abc.test.com`都可以)
+  + 根据code访问`gitauth.abc.test.com`上的cookie申请链接
+    + 服务端根据code获取Github账户名信息，再加上当前时间戳和盐值，生成哈希值作为cookie返回  
+    (cookie域为`.test.com`、`abc.test.com`都可以，根据需要进行选择)
   + 访问服务域名`abc.test.com`
 
 + 实际上，当scope为空，Github OAuth只能得到基本的用户名，连Email都获取不到，与其说是授权，不如说是认证。
