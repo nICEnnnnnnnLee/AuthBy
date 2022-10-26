@@ -3,7 +3,7 @@
         <a href="https://github.com/nICEnnnnnnnLee/GithubSoEasy" target="_blank">AuthBy</a>&nbsp;
       </strong>
   <br>
-        AuthBy, 使用Cloudflare Workers 实现Github授权获取
+        使用Cloudflare Workers 实现Github授权获取
   <br>
       源自<strong>
         <a href="https://github.com/ButterAndButterfly" target="_blank">ButterAndButterfly</a><br>
@@ -15,18 +15,19 @@
 
 ## 使用场景  
 在某些情况下，我们并不希望用户不受限制的访问我们的某些服务。  
+假设提供服务的域名在`abc.test.com`。  
 + 一个解决思路是： 
   + 访问服务域名`abc.test.com`，根据Cookie判断是否经过授权
     + 是, 提供服务，流程结束
     + 否, 下一步
   + 跳转到授权域名`gitauth.abc.test.com`，访问Github OAuth链接
-    + 验证成功，获取code  
+    + 验证成功，获取code，下一步
     + 验证失败，拒绝服务，流程结束  
   + 根据code访问cookie申请链接
     + 服务端根据code获取Github账户名信息，再加上当前时间戳和盐值，生成哈希值作为cookie返回(域为`.test.com`、`abc.test.com`都可以)
-  + 访问服务域名`test.com`
+  + 访问服务域名`abc.test.com`
 
-+ 实际上，当scope为空，Github OAuth只能得到基本的用户名，连Email都获取不到，与其说是授权，不如说是认证。  
++ 实际上，当scope为空，Github OAuth只能得到基本的用户名，连Email都获取不到，与其说是授权，不如说是认证。
 应该侵犯不了啥权益吧。。。
 
 ## 示例Demo
