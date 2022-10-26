@@ -1,6 +1,6 @@
 <p align="center">
       <strong>
-        <a href="https://github.com/nICEnnnnnnnLee/GithubSoEasy" target="_blank">AuthBy</a>&nbsp;
+        <a href="https://github.com/nICEnnnnnnnLee/AuthBy" target="_blank">AuthBy</a>&nbsp;
       </strong>
   <br>
         使用Cloudflare Workers 实现Github授权获取
